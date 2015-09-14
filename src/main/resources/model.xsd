@@ -10,6 +10,7 @@
 				<element name="id" type="long"></element>
 				<element name="userName" type="string"></element>
 				<element name="role" type="string"></element>
+                                <element name="image" type="string"></element>
 			</sequence>
 		</complexType>
 	</element>
@@ -23,5 +24,5 @@
 			</sequence>
 		</complexType>
 	</element>
-
+        
 </schema>
