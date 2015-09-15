@@ -26,6 +26,28 @@ and open the template in the editor.
                             </p>
                              <p><button type="submit" value="submit" ng-click="claim(info)" >Submit</button></p>
 			</div>
+                        <div class="panel-body" align="center" style="height: 100%;">
+                            <header>Personal Details</header>
+                            <p> Title: <input id="mytext" type ="text" name="title" placeholder="Mr/Miss" ng-model="title" required>
+                            <span ng-show="form.title.$dirty && form.title.$error.required" class="help-block"></span>
+                            </p>
+                            <p>Name: <input id="mytext" type ="text" name="name" placeholder="Name" ng-model="name" required>
+                            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block"></span>
+                            </p>
+                            <p> Surname: <input id="mytext" type ="text" name="surname" placeholder="Surname" ng-model="surname" required>
+                            <span ng-show="form.incident.$dirty && form.incident.$error.required" class="help-block"></span>
+                            </p>
+                            <p> Identity No: <input id="mytext" type ="text" name="incident" placeholder="Incident" ng-model="info.incident" required>
+                            <span ng-show="form.surname.$dirty && form.surname.$error.required" class="help-block"></span>
+                            </p>
+                            <p> Contact No: <input id="mytext" type ="text" name="contact" placeholder="Contact Number" ng-model="contact" required>
+                            <span ng-show="form.contact.$dirty && form.contact.$error.required" class="help-block"></span>
+                            </p>
+                            <p> Email Address <input id="mytext" type ="text" name="email" placeholder="E-mail Address" ng-model="email" required>
+                            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block"></span>
+                            </p>
+                             
+			</div>
 			<div class="panel-footer text-right">
                             
 			</div>
