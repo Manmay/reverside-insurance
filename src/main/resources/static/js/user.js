@@ -5,7 +5,12 @@ reverside.config(['$routeProvider', function ($routeProvider) {
                 .when('/userDetails', {
                     'templateUrl': '/html/users.html',
                     'controller': 'userCtrl'
-                }).otherwise({
+                })
+                .when('/submitClaim', {
+                    'templateUtl': 'html/claims.html',
+                    'controller': 'claimCtrl'
+                })
+                .otherwise({
                     redirectTo: '/userDetails'
                 });
     }]);
@@ -38,6 +43,11 @@ reverside.controller('userCtrl', function ($scope, $rootScope, $http) {
 
     $scope.closeNotification = function () {
         $rootScope.message = undefined;
+    };
+})
+reverside.controller('claimCtrl', function($scope,$rootscope,http){
+    $scope.claim = function(){
+        
     };
 });
 
