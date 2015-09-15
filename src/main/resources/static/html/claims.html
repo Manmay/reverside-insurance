@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row" style="padding: 25px;" ng-submit="claim()">
+    <div class="col-md-3">
+       
+		<div class="panel panel-default" style="box-shadow: 0 0 30px black;">
+                    <form name="form"  role="submit" ng-controller="claimCtrl">
+			<div class="panel-body" align="center" style="height: 100%;">
+                            <p> Policy No: <input id="mytext" type ="text" name="policy" placeholder="Policy Number" ng-model="info.policyNo" required>
+                            <span ng-show="form.policyNo.$dirty && form.policyNo.$error.required" class="help-block"></span>
+                            </p>
+                            <p>which policy are you claiming
+                                <select autofocus="">
+                                        <option value="car">Car</option>
+                                        <option value="home">Home</option>
+                                        <option value="more">More</option>
+                                        <option value="bicycle">BMX</option>
+                                </select>
+                            </p>
+                            <p> What happened to your car: <input id="mytext" type ="text" name="incident" placeholder="Incident" ng-model="info.incident" required>
+                            <span ng-show="form.incident.$dirty && form.incident.$error.required" class="help-block"></span>
+                            </p>
+                             <p><button type="submit" value="submit" ng-click="claim(info)" >Submit</button></p>
+			</div>
+			<div class="panel-footer text-right">
+                            
+			</div>
+                    </form>
+		</div>
+	</div>
+    
+</div>
