@@ -6,3 +6,7 @@ insert into login (user_name, password, enabled, image, role) values('Rhulani', 
 
 
 
+/*insert into claims (policyNo, policy_type, incident_type, title, fName, lName, identityNo, contactNo, 
+                    email, incident_location, incident_date, incident_description, passanger_status, 
+                    noOfPassangers, damage_description, police_report) values(12345, 'COMPREHENSIVE', 'Theft', 
+                    'Mr', 'Ronny', 'Ronald', '84125609875', null, null, null, null, null, null, null, null);*/

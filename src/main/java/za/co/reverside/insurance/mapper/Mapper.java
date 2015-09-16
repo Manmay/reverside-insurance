@@ -2,7 +2,9 @@ package za.co.reverside.insurance.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
+import za.co.reverside.insurance.domain.Claim;
 import za.co.reverside.insurance.domain.User;
+import za.co.reverside.insurance.model.ClaimQueryModel;
 import za.co.reverside.insurance.model.UserQueryModel;
 
 public class Mapper {
@@ -24,6 +26,17 @@ public static UserQueryModel toUserQueryModel(User from) {
         }
         return userList;
     }
-   
+public static ClaimQueryModel toClaimQueryModel(Claim from){
+    ClaimQueryModel claim = new ClaimQueryModel();
+    //claim.setTitle(from.getTitle());
+    return claim;
+}
+   public static List<ClaimQueryModel> toClaimQueryModel(List<Claim> fromList){
+       List<ClaimQueryModel> claimList = new ArrayList<ClaimQueryModel>();
+       for(Claim claim:fromList){
+           claimList.add(toClaimQueryModel(claim));
+       }
+       return claimList;
+   }
 
 }
