@@ -18,9 +18,10 @@
 	<element name="UserCommandModel">
 		<complexType>
 			<sequence>
-				<element name="userName" type="string"></element>
-				<element name="password" type="string"></element>
-				<element name="role" type="string"></element>
+				<element name="name" type="string"></element>
+				<element name="surname" type="string"></element>
+				<element name="email" type="string"></element>
+                                <element name="phoneNumber" type="string"></element>
 			</sequence>
 		</complexType>
 	</element>

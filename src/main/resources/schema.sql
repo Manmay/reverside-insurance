@@ -8,6 +8,15 @@ create table login (
     role varchar(16) not null
 );
 
+/* table : user_details */
+create table user_details (
+    id integer auto_increment not null primary key,
+    username varchar(32) not null, 
+    surname varchar(32) not null, 
+    email varchar(32) not null,
+    phone_no varchar(32) not null
+);
+
 
 
 

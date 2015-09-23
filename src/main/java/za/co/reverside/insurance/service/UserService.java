@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
 import za.co.reverside.insurance.domain.User;
-
 import static za.co.reverside.insurance.mapper.Mapper.toUserQueryModel;
 import za.co.reverside.insurance.model.UserQueryModel;
 import za.co.reverside.insurance.repository.UserRepository;
