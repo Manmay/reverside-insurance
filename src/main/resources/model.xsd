@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
 	targetNamespace="http://reverside.co.za/insurance/model"
@@ -18,12 +19,14 @@
 	<element name="UserCommandModel">
 		<complexType>
 			<sequence>
-				<element name="userName" type="string"></element>
-				<element name="password" type="string"></element>
-				<element name="role" type="string"></element>
+				<element name="name" type="string"></element>
+				<element name="surname" type="string"></element>
+				<element name="email" type="string"></element>
+                                <element name="phoneNumber" type="string"></element>
 			</sequence>
 		</complexType>
 	</element>
+        
         <element name="ClaimQueryModel">
 		<complexType>
 			<sequence>
@@ -58,4 +61,3 @@
 		</complexType>
 	</element>
         
-</schema>

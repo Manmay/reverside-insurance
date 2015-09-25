@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* table : login */
 create table login (
     id integer auto_increment not null primary key,
@@ -27,8 +28,13 @@ damage_description varchar(32),
 police_report varchar(3)
 );
 
-
-
-
+/* table : user_details */
+create table user_details (
+    id integer auto_increment not null primary key,
+    username varchar(32) not null, 
+    surname varchar(32) not null, 
+    email varchar(32) not null,
+    phone_no varchar(32) not null
+);
 
 
