@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
 	targetNamespace="http://reverside.co.za/insurance/model"
@@ -26,4 +27,37 @@
 		</complexType>
 	</element>
         
-</schema>
+        <element name="ClaimQueryModel">
+		<complexType>
+			<sequence>
+				<element name="title" type="string"></element>
+				<element name="fNmae" type="string"></element>
+				<element name="IdNo" type="string"></element>
+                                <element name="email" type="string"></element>
+                                <element name="contact" type="string"></element>
+                                <element name="email" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="ClaimCommandModel">
+		<complexType>
+			<sequence>
+                                <element name="title" type="string"></element>
+				<element name="fNmae" type="string"></element>
+				<element name="IdNo" type="string"></element>
+                                <element name="email" type="string"></element>
+                                <element name="contact" type="string"></element>
+                                <element name="email" type="string"></element>
+				<element name="location" type="string"></element>
+				<element name="time" type="string"></element>
+				<element name="date" type="string"></element>
+                                <element name="description" type="string"></element>
+                                <element name="passanger_stat" type="string"></element>
+                                <element name="noOfPassangers" type="integer"></element>
+                                <element name="damage" type="string"></element>
+                                <element name="police_report" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+        
