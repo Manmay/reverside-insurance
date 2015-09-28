@@ -23,9 +23,9 @@ class SwaggerConfig  {
 	}
 	
 	private ApiInfo apiInfo() {
-		ApiInfo apiInfo = new ApiInfo("Polygon API", "API for Polygon",
-				"Polygon API terms of service", "manmay.e.mohanty@gmail.com",
-				"Polygon API Licence Type", "Polygon API License URL");
+		ApiInfo apiInfo = new ApiInfo("Reverside Insurance API", "API for Reverside Insurance",
+				"Reverside Insurance API terms of service", "manmay.e.mohanty@gmail.com",
+				"Reverside Insurance API Licence Type", "Reverside Insurance API License URL");
 		return apiInfo;
 	}
    
