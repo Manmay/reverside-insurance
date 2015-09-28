@@ -20,10 +20,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "claim")
 public class Claim {
-     @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "claim_no")
-    private int claimNo;
+    @Column(name = "id")
+    private Long id;
     @Column(name = "policyNo")
     private int policyNo;
     @Column(name = "policy_type")
@@ -57,12 +58,12 @@ public class Claim {
     @Column(name = "police_report")
     private String report;
 
-    public int getClaimNo() {
-        return claimNo;
+    public Long getId() {
+        return id;
     }
 
-    public void setClaimNo(int claimNo) {
-        this.claimNo = claimNo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getPolicyNo() {
@@ -193,5 +194,4 @@ public class Claim {
         this.report = report;
     }
 
-    
 }

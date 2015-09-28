@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* table : login */
 create table login (
     id integer auto_increment not null primary key,
@@ -8,8 +7,21 @@ create table login (
     image varchar(128) not null,
     role varchar(16) not null
 );
+
+
+/* table : user_details */
+create table user_details (
+    id integer auto_increment not null primary key,
+    username varchar(32) not null, 
+    surname varchar(32) not null, 
+    email varchar(32) not null,
+    phone_no varchar(32) not null
+);
+
+
+/* table : claims */
 create table claims(
-claim_no integer auto_increment not null primary key,
+id integer auto_increment not null primary key,
 policyNo integer(3),
 policy_type varchar(10),
 incident_type varchar(20),
@@ -26,15 +38,6 @@ passanger_status varchar(3),
 noOfPassangers integer(3),
 damage_description varchar(32),
 police_report varchar(3)
-);
-
-/* table : user_details */
-create table user_details (
-    id integer auto_increment not null primary key,
-    username varchar(32) not null, 
-    surname varchar(32) not null, 
-    email varchar(32) not null,
-    phone_no varchar(32) not null
 );
 
 
