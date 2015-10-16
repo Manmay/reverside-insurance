@@ -136,6 +136,7 @@ reverside.controller('claimCtrl', function ($scope, $rootScope, $http) {
     };
 });
 
+<<<<<<< HEAD
 reverside.controller('claimDetailCtrl', function ($scope, $rootScope, $http) {
     
      $scope.init = function () {
@@ -163,3 +164,5 @@ reverside.controller('claimDetailCtrl', function ($scope, $rootScope, $http) {
     };
 
 });
+=======
+>>>>>>> eabe72196c95320bfe66d85f74c46d5d62024b7a
