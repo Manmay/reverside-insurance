@@ -17,7 +17,7 @@ public class UserDetailService {
     @Autowired
     private UserDetailRepository userDetailRepository;
 
-    @RequestMapping(value = "api/create-user", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = "text/html")
+    @RequestMapping(value = "api/create-user", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void  createuser(@RequestBody UserCommandModel userCommandModel) {
 
         UserDetail userDetail = fromuserDetail(userCommandModel);

@@ -1,60 +1,3 @@
-<<<<<<< HEAD
-var reverside = angular.module('reverside', ['ngRoute']);
-
-reverside.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider
-                .when('/userDetails', {
-                    'templateUrl': '/html/users.html',
-                    'controller': 'userCtrl'
-                })
-                .when('/submitClaim', {
-                    'templateUtl': '/html/claims.html',
-                    'controller': 'claimCtrl'
-                })
-                .otherwise({
-                    redirectTo: '/userDetails'
-                });
-    }]);
-
-
-reverside.controller('userCtrl', function ($scope, $rootScope, $http) {
-
-    $scope.init = function () {
-        $scope.getUsers();
-    };
-
-    $scope.getUsers = function () {
-        console.log('get products');
-        $http({
-            url: '/api/users',
-            method: 'get'
-        }).success(function (data, status) {
-            if (status === 200) {
-                console.log('retrived successfully');
-                $rootScope.login = data;
-            } else {
-                console.log('status:' + status);
-                $rootScope.error = "error status code : " + status;
-                ;
-            }
-        }).error(function (error) {
-            $rootScope.message = "Oops, we received your request, but there was an error processing it";
-        });
-    };
-
-    $scope.closeNotification = function () {
-        $rootScope.message = undefined;
-    };
-});
-reverside.controller('claimCtrl', function($scope,$rootscope,http){
-    $scope.claim = function(){
-        
-    };
-});
-
-
-
-=======
 var reverside = angular.module('reverside', ['ngRoute']);
 
 reverside.config(['$routeProvider', function ($routeProvider) {
@@ -63,14 +6,21 @@ reverside.config(['$routeProvider', function ($routeProvider) {
                     'templateUrl': '/html/users.html',
                     'controller': 'userCtrl'
                 })
+                .when('/claims', {
+                    'templateUrl': '/html/claims.html',
+                    'controller': 'claimCtrl'
+                })
+                .when('/claimDetails', {
+                    'templateUrl': '/html/claimDetails.html',
+                    'controller': 'claimDetailCtrl'
+                })
                 .when('/create-user', {
                     'templateUrl': '/html/create-user.html',
                     'controller': 'createCtrl'
                 }).otherwise({
-                    redirectTo: '/users'
-                });
+            redirectTo: '/claims'
+        });
     }]);
-
 
 reverside.controller('userCtrl', function ($scope, $rootScope, $http) {
     $scope.name;
@@ -96,40 +46,120 @@ reverside.controller('userCtrl', function ($scope, $rootScope, $http) {
         }).error(function (error) {
             $rootScope.message = "Oops, we received your request, but there was an error processing it";
         });
-    };  
+    };
 });
 
 reverside.controller('createCtrl', function ($scope, $rootScope, $http) {
 
 
-       $scope.userDetail={};
-       
-    $scope.save  = function (form) {
-      
-       if (form.$invalid) {
-			console.log("Form Validation Failure");
-		} else {
-			$http({
-				url: '/api/create-user',
-				method: 'post',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				data: $scope.userDetail
-			}).success(function (data, status) {
-				if (status === 200) {
-					console.log('Datas saved sucessfully');
-				} else {
-					console.log('status:' + status);
-				}
-			}).error(function (error) {
-				console.log(error);
-				$rootScope.message = error;
-			});
-		}
+    $scope.userDetail = {};
 
-	};
+    $scope.save = function (form) {
+
+        if (form.$invalid) {
+            console.log("Form Validation Failure");
+        } else {
+            $http({
+                url: '/api/create-user',
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: $scope.userDetail
+            }).success(function (data, status) {
+                if (status === 200) {
+                    console.log('Datas saved sucessfully');
+                    alert("Data saved");
+                } else {
+                    console.log('status:' + status);
+                }
+            }).error(function (error) {
+                console.log(error);
+                $rootScope.message = error;
+            });
+        }
+
+    };
 });
 
+reverside.controller('claimCtrl', function ($scope, $rootScope, $http) {
+    $scope.clientDetails = {};
 
->>>>>>> 37a1cc0b5adc6dba90c7d8b539aa798caa57494d
+    $scope.policy = function () {
+        console.log('get products');
+        $http({
+            url: '/api/clients/' + $scope.clientDetails.id,
+            method: 'get'
+        }).success(function (data, status) {
+            if (status === 200) {
+                console.log('retrived successfully');
+                $scope.clientDetails = data;
+            } else {
+                console.log('status:' + status);
+                $rootScope.error = "error status code : " + status;
+                ;
+            }
+        }).error(function (error) {
+            $rootScope.message = "Oops, we received your request, but there was an error processing it";
+        });
+    };
+
+    $scope.clientDetails = {};
+
+    $scope.claim = function (form) {
+
+        if (form.$invalid) {
+            console.log("Form Validation Failure");
+        } else {
+            $http({
+                url: '/api/claims',
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: $scope.clientDetails
+            }).success(function (data, status) {
+                if (status === 201) {
+                    console.log('Datas saved sucessfully');
+                    alert("Claim Logged");
+                } else {
+                    console.log('status:' + status);
+                    alert("error: " + status);
+                }
+            }).error(function (error) {
+                console.log(error);
+                alert("function error: " + error);
+                $rootScope.message = error;
+            });
+        }
+
+    };
+});
+
+reverside.controller('claimDetailCtrl', function ($scope, $rootScope, $http) {
+    
+     $scope.init = function () {
+         
+         $scope.clientDetails = {};
+    };
+    
+    $scope.claim = function () {
+        console.log('get products');
+        $http({
+            url: '/api/claims/',// + $scope.clientDetails.id,
+            method: 'get'
+        }).success(function (data, status) {
+            if (status === 200) {
+                console.log('retrived claim detail successfully');
+                $scope.clientDetails = data;
+            } else {
+                console.log('status:' + status);
+                $rootScope.error = "error status code : " + status;
+                ;
+            }
+        }).error(function (error) {
+            $rootScope.message = "Oops, we received your request, but there was an error processing it";
+        });
+    };
+
+});

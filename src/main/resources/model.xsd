@@ -1,63 +1,160 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
-	targetNamespace="http://reverside.co.za/insurance/model"
-	xmlns:tns="http://reverside.co.za/insurance/model" 
-	elementFormDefault="qualified">
+        targetNamespace="http://reverside.co.za/insurance/model"
+        xmlns:tns="http://reverside.co.za/insurance/model" 
+        elementFormDefault="qualified">
 
-	<element name="UserQueryModel">
-		<complexType>
-			<sequence>
-				<element name="id" type="long"></element>
-				<element name="userName" type="string"></element>
-				<element name="role" type="string"></element>
-                                <element name="image" type="string"></element>
-			</sequence>
-		</complexType>
-	</element>
+    <element name="UserQueryModel">
+        <complexType>
+            <sequence>
+                <element name="id" type="long"></element>
+                <element name="userName" type="string"></element>
+                <element name="role" type="string"></element>
+                <element name="image" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
 
-	<element name="UserCommandModel">
-		<complexType>
-			<sequence>
-				<element name="name" type="string"></element>
-				<element name="surname" type="string"></element>
-				<element name="email" type="string"></element>
-                                <element name="phoneNumber" type="string"></element>
-			</sequence>
-		</complexType>
-	</element>
-        
-        <element name="ClaimQueryModel">
-		<complexType>
-			<sequence>
-				<element name="title" type="string"></element>
-				<element name="fNmae" type="string"></element>
-				<element name="IdNo" type="string"></element>
-                                <element name="email" type="string"></element>
-                                <element name="contact" type="string"></element>
-                                <element name="email" type="string"></element>
-			</sequence>
-		</complexType>
-	</element>
+    <element name="UserCommandModel">
+        <complexType>
+            <sequence>
+                <element name="name" type="string"></element>
+                <element name="surname" type="string"></element>
+                <element name="email" type="string"></element>
+                <element name="phoneNumber" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
 
-	<element name="ClaimCommandModel">
-		<complexType>
-			<sequence>
-                                <element name="title" type="string"></element>
-				<element name="fNmae" type="string"></element>
-				<element name="IdNo" type="string"></element>
-                                <element name="email" type="string"></element>
-                                <element name="contact" type="string"></element>
-                                <element name="email" type="string"></element>
-				<element name="location" type="string"></element>
-				<element name="time" type="string"></element>
-				<element name="date" type="string"></element>
-                                <element name="description" type="string"></element>
-                                <element name="passanger_stat" type="string"></element>
-                                <element name="noOfPassangers" type="integer"></element>
-                                <element name="damage" type="string"></element>
-                                <element name="police_report" type="string"></element>
-			</sequence>
-		</complexType>
-	</element>
-        
+    <element name="ClientQueryModel">
+        <complexType>
+            <sequence>
+                <element name="id" type="long"></element>
+                <element name="policy_id" type="long"></element>
+                <element name="claim_id" type="long"></element>
+                <element name="first_name" type="string"></element>
+                <element name="last_name" type="string"></element>
+                <element name="identity_no" type="long"></element>
+                <element name="contact_no" type="string"></element>
+                <element name="email" type="string"></element>
+                <element name="title" type="string"></element>
+                <element name="agent" type="string"></element>
+                <element name="company_name" type="string"></element>
+                <element name="physical_address" type="string"></element>
+                <element name="postal_address" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="ClientCommandModel">
+        <complexType>
+            <sequence>
+                <element name="first_name" type="string"></element>
+                <element name="last_name" type="string"></element>
+                <element name="identity_no" type="long"></element>
+                <element name="contact_no" type="string"></element>
+                <element name="email" type="string"></element>
+                <element name="title" type="string"></element>
+                <element name="agent" type="string"></element>
+                <element name="company_name" type="string"></element>
+                <element name="physical_address" type="string"></element>
+                <element name="postal_address" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="PolicyQueryModel">
+        <complexType>
+            <sequence>
+                <element name="id" type="long"></element>
+                <element name="client_id" type="long"></element>
+                <element name="policy_no" type="long"></element>
+                <element name="policy_type" type="string"></element>
+                <element name="start_date" type="string"></element>
+                <element name="end_date" type="string"></element>
+            
+            </sequence>
+        </complexType> 
+    </element>
+       
+    <element name="PolicyCommandModel">
+        <complexType>
+            <sequence>
+                <element name="client_id" type="long"></element>
+                <element name="policy_type" type="string"></element>
+                <element name="start_date" type="string"></element>
+                <element name="end_date" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="ClaimQueryModel">
+        <complexType>
+            <sequence>
+                <element name="id" type="long"></element>
+                <element name="policy_id" type="long"></element>
+                <element name="client_id" type="long"></element>
+                <element name="title" type="string"></element>
+                <element name="first_name" type="string"></element>
+                <element name="last_name" type="string"></element>   
+                <element name="identity_no" type="long"></element>
+                <element name="contact_no" type="string"></element>
+                <element name="email" type="string"></element>
+                <element name="company_name" type="string"></element>
+                <element name="agent" type="string"></element>
+                <element name="physical_address" type="string"></element>
+                <element name="postal_address" type="string"></element>
+                <element name="incident_date" type="string"></element>
+                <element name="incident_loc" type="string"></element>
+                <element name="location" type="string"></element>
+                <element name="occupation" type="string"></element>
+                <element name="loss_type" type="string"></element>
+                <element name="incident_desription" type="string"></element>
+                <element name="third_party_name" type="string"></element>
+                <element name="third_party_contact" type="string"></element>
+                <element name="insurer_name" type="string"></element>
+                <element name="police_station_name" type="string"></element>
+                <element name="report_date" type="string"></element>
+                <element name="case_no" type="string"></element>
+               
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="ClaimCommandModel">
+        <complexType>
+            <sequence>
+                <element name="id" type="long"></element>
+                <element name="policy_id" type="long"></element>
+                <element name="client_id" type="long"></element>
+                <element name="title" type="string"></element>
+                <element name="first_name" type="string"></element>
+                <element name="last_name" type="string"></element>   
+                <element name="identity_no" type="long"></element>
+                <element name="contact_no" type="string"></element>
+                <element name="email" type="string"></element>
+                <element name="company_name" type="string"></element>
+                <element name="agent" type="string"></element>
+                <element name="physical_address" type="string"></element>
+                <element name="postal_address" type="string"></element>
+                <element name="incident_date" type="string"></element>
+                <element name="incident_loc" type="string"></element>
+                <element name="location" type="string"></element>
+                <element name="occupation" type="string"></element>
+                <element name="loss_type" type="string"></element>
+                <element name="incident_desription" type="string"></element>
+                <element name="third_party_name" type="string"></element>
+                <element name="third_party_contact" type="string"></element>
+                <element name="insurer_name" type="string"></element>
+                <element name="police_station_name" type="string"></element>
+                <element name="report_date" type="string"></element>
+                <element name="case_no" type="string"></element>
+                <element name="images" type="base64Binary"></element>     
+                <element name="additional_documents" type="base64Binary"></element>     
+
+            </sequence>
+        </complexType>
+    </element>
+</schema> 
+     
+
