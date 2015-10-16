@@ -135,34 +135,3 @@ reverside.controller('claimCtrl', function ($scope, $rootScope, $http) {
 
     };
 });
-
-<<<<<<< HEAD
-reverside.controller('claimDetailCtrl', function ($scope, $rootScope, $http) {
-    
-     $scope.init = function () {
-         
-         $scope.clientDetails = {};
-    };
-    
-    $scope.claim = function () {
-        console.log('get products');
-        $http({
-            url: '/api/claims/',// + $scope.clientDetails.id,
-            method: 'get'
-        }).success(function (data, status) {
-            if (status === 200) {
-                console.log('retrived claim detail successfully');
-                $scope.clientDetails = data;
-            } else {
-                console.log('status:' + status);
-                $rootScope.error = "error status code : " + status;
-                ;
-            }
-        }).error(function (error) {
-            $rootScope.message = "Oops, we received your request, but there was an error processing it";
-        });
-    };
-
-});
-=======
->>>>>>> eabe72196c95320bfe66d85f74c46d5d62024b7a
